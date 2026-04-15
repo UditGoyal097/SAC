@@ -34,11 +34,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const shouldEnableAnalytics =
+    process.env.NODE_ENV === 'production' && process.env.VERCEL === '1'
+
   return (
     <html lang="en" className="bg-background">
       <body className="font-sans antialiased">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {shouldEnableAnalytics && <Analytics />}
       </body>
     </html>
   )

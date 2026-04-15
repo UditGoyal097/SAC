@@ -7,10 +7,24 @@ interface WeatherIconProps {
 }
 
 export function WeatherIcon({ iconUrl, alt, size = 64 }: WeatherIconProps) {
-  // Ensure the icon URL has the correct protocol
-  const fullIconUrl = iconUrl.startsWith('http')
-    ? iconUrl
-    : `https:${iconUrl}`;
+  const isUrlIcon =
+    iconUrl.startsWith('http://') ||
+    iconUrl.startsWith('https://') ||
+    iconUrl.startsWith('//');
+
+  if (!isUrlIcon) {
+    return (
+      <span
+        role="img"
+        aria-label={alt}
+        style={{ fontSize: `${size}px`, lineHeight: 1 }}
+      >
+        {iconUrl}
+      </span>
+    );
+  }
+
+  const fullIconUrl = iconUrl.startsWith('//') ? `https:${iconUrl}` : iconUrl;
 
   return (
     <Image
