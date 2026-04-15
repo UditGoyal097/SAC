@@ -1,0 +1,188 @@
+ṇ<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Association Club</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling to ensure footer sticks to the bottom */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: #f0f0f5;
+        }
+        header {
+            background-color: #0059b3;  /* Darker blue background */
+            color: white;
+            padding: 2em 0;  /* Increased padding for a larger navbar */
+            text-align: center;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 2em;  /* Increased margin for more spacing */
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;  /* Larger font size for better visibility */
+        }
+        main {
+            flex: 1;
+        }
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+        #home {
+            background-color: #e7f3fe;  /* Light blue background */
+            color: #004080;
+        }
+        #events {
+            background-color: #ffffff;  /* White background */
+            color: #003366;
+        }
+        #forum {
+            background-color: #f0f0ff;  /* Light purple background */
+            color: #663399;
+        }
+        .btn-green {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 2em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #0059b3;  /* Darker blue background */
+            color: white;
+        }
+        footer {
+            background-color: #333333;  /* Dark gray background */
+            color: #ffffff;
+            text-align: center;
+            padding: 1em 0;
+            flex-shrink: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Association Club</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events & Announcements</a></li>
+                <li><a href="#forum">Forum</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScJG7t6LknxaNBSwUB1ITP_ofbjywObKPF-fQ-9woeMGfsUxw/viewform?embedded=true" target="_blank">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="full-screen">
+            <h2 style="font-size: 3em; font-weight: bold;">Welcome to the Student Association Club</h2>
+            <p style="font-size: 1.5em;">The heart of our campus community</p>
+            <p style="font-size: 1.2em;">Our mission is to foster a sense of belonging and provide opportunities for personal growth, leadership, and community service.</p>
+            <p style="font-size: 1.2em;">Join us in building a vibrant student community where everyone can thrive.</p>
+        </section>
+
+        <section id="events" class="full-screen">
+            <h2>Events & Announcements</h2>
+            <div id="events-announcements">
+                <div id="calendar">
+                    <table>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                        <tr>
+                            <td>Skit Smash</td>
+                            <td>12th November 2024</td>
+                            <td>10:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Cricket Tournament</td>
+                            <td>15th November 2024</td>
+                            <td>9:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Poetry Reading</td>
+                            <td>18th November 2024</td>
+                            <td>11:00 AM</td>
+                        </tr>
+                        <tr>
+                            <td>Coding Mela</td>
+                            <td>20th November 2024</td>
+                            <td>1:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Picasso's Art</td>
+                            <td>22nd November 2024</td>
+                            <td>3:00 PM</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="announcements">
+                    <h3>Recent Announcements</h3>
+                    <p>We are excited to announce a series of events that aim to bring our community together through fun and engaging activities. Stay tuned for more updates!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="forum" class="full-screen">
+            <h2>Discussion Forum</h2>
+            <h3 style="font-weight: bold;">Ask Your Doubt</h3>
+            <button class="btn-green" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdenK4qNsDZr0SHata55HamOjL96S-Ek2ULHNrkBqDpt41bXQ/viewform', '_blank')">Ask Your Doubt</button>
+            <div id="top-questions" style="margin-top: 20px;">
+                <h3>Top 5 Questions and Answers</h3>
+                <ul>
+                    <li><strong>Question 1:</strong> What is the format of the Skit Smash event?<br>Answer: The Skit Smash event will be a series of short performances by different groups, each showcasing their creative skits.</li>
+                    <li><strong>Question 2:</strong> What are the rules for the Cricket Tournament?<br>Answer: The Cricket Tournament will follow standard T20 rules. Teams must consist of at least 11 players.</li>
+                    <li><strong>Question 3:</strong> How can I participate in the Poetry Reading event?<br>Answer: Participants can sign up for the Poetry Reading event by contacting the event coordinator or signing up online.</li>
+                    <li><strong>Question 4:</strong> What topics will be covered in the Coding Mela?<br>Answer: The Coding Mela will cover a range of topics including web development, data science, and competitive programming.</li>
+                    <li><strong>Question 5:</strong> Is there an age limit for Picasso's Art event?<br>Answer: There is no age limit for Picasso's Art event. Everyone is welcome to participate and showcase their artistic talents.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us: studentassociation@university.edu</p>
+        <p>© 2024 Student Association Club</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
