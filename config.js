@@ -6,7 +6,7 @@ const CONFIG = {
   DEV_API_BASE: 'http://localhost:5000/api',
   
   // Production - UPDATE THIS with your Render deployment URL
-  PROD_API_BASE: 'https://your-render-app.onrender.com/api',
+  PROD_API_BASE: 'https://sac-jk41.onrender.com/api',
   
   // Get the appropriate API base based on environment
   getApiBase() {
