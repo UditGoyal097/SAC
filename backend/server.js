@@ -12,8 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Serve static frontend files
-app.use(express.static(path.join(__dirname, '../frontend')));
+// Serve static frontend files from root
+app.use(express.static(path.join(__dirname, '..')));
 
 // API Routes
 app.use('/api/auth', authRoutes);
@@ -82,7 +82,7 @@ app.get('/api/weather', async (req, res) => {
 
 // Root endpoint serves index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'), (err) => {
+  res.sendFile(path.join(__dirname, '../index.html'), (err) => {
     if (err) {
       console.error('Error serving index.html:', err);
       res.status(404).send('index.html not found');
