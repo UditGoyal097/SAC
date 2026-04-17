@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
@@ -12,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 // Serve static frontend files
-app.use(express.static('../frontend'));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // API Routes
 app.use('/api/auth', authRoutes);
@@ -81,7 +82,12 @@ app.get('/api/weather', async (req, res) => {
 
 // Root endpoint serves index.html
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/../frontend/index.html');
+  res.sendFile(path.join(__dirname, '../frontend/index.html'), (err) => {
+    if (err) {
+      console.error('Error serving index.html:', err);
+      res.status(404).send('index.html not found');
+    }
+  });
 });
 
 const PORT = process.env.PORT || 5000;
