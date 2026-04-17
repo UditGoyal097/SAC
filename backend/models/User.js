@@ -3,26 +3,38 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const dataDir = path.join(__dirname, '../../data');
+const dataDir = path.join(path.dirname(__dirname), 'data');
 const usersFile = path.join(dataDir, 'users.json');
 
 // Ensure data directory exists
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
+  console.log('Created data directory at:', dataDir);
 }
 
 // Initialize users file if it doesn't exist
 if (!fs.existsSync(usersFile)) {
   fs.writeFileSync(usersFile, JSON.stringify([], null, 2));
+  console.log('Created users.json at:', usersFile);
 }
 
 const getUsers = () => {
-  const data = fs.readFileSync(usersFile, 'utf8');
-  return JSON.parse(data);
+  try {
+    const data = fs.readFileSync(usersFile, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error reading users file:', error);
+    return [];
+  }
 };
 
 const saveUsers = (users) => {
-  fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+  try {
+    fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+  } catch (error) {
+    console.error('Error saving users file:', error);
+    throw new Error('Failed to save user data');
+  }
 };
 
 const findUserByEmail = (email) => {
