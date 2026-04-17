@@ -39,6 +39,12 @@ A modern weather application with user authentication, favorite city management,
 
 ## Getting Started
 
+### Fast Deployment (Recommended)
+See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step instructions to:
+- Deploy backend to Render.com (free)
+- Deploy frontend to GitHub Pages
+- Live URL: `https://yourusername.github.io/SAC`
+
 ### Prerequisites
 - Node.js 14+
 - npm or yarn
@@ -67,6 +73,26 @@ npm start
 The server will start on `http://localhost:5000`
 
 Open your browser and navigate to `http://localhost:5000`
+
+## Configuring API URL
+
+The API base URL is configured in [frontend/config.js](frontend/config.js):
+
+```javascript
+const CONFIG = {
+  DEV_API_BASE: 'http://localhost:5000/api',      // Local development
+  PROD_API_BASE: 'https://your-backend-url/api',  // Production (Render, etc.)
+  getApiBase() {
+    // Automatically switches based on hostname
+  }
+};
+```
+
+**To deploy:**
+1. Deploy backend to Render/Railway
+2. Update `PROD_API_BASE` in [frontend/config.js](frontend/config.js)
+3. Deploy frontend to GitHub Pages
+4. Done! No need to rebuild
 
 ## API Endpoints
 

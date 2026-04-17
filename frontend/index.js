@@ -1,5 +1,5 @@
-// API Configuration
-const API_BASE = 'https://sac-jk41.onrender.com/api';
+// API Configuration - Dynamic based on environment
+// Uses CONFIG from config.js
 
 // State
 let currentWeatherData = null;
